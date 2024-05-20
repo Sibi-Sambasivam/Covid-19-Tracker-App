@@ -8,7 +8,7 @@ const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'country/:countryName', component: CountryDetailComponent },
   { path: 'charts', component: ChartsComponent },
-  { path: '**', redirectTo: '' } // Default route
+  { path: '**', redirectTo: '' }
 ];
 
 @NgModule({

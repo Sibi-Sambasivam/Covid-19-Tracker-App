@@ -1,1 +1,7 @@
-<p>country-detail works!</p>
+<h1>COVID-19 Data for {{ countryName }}</h1>
+<div *ngIf="countryData">
+  <p>Total Cases: {{ countryData[countryData.length - 1].Confirmed }}</p>
+  <p>Total Deaths: {{ countryData[countryData.length - 1].Deaths }}</p>
+  <p>Total Recovered: {{ countryData[countryData.length - 1].Recovered }}</p>
+  <p>Active Cases: {{ countryData[countryData.length - 1].Active }}</p>
+</div>

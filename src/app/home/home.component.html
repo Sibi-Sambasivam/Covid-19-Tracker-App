@@ -1,1 +1,6 @@
-<p>home works!</p>
+<h1>Countries</h1>
+<ul>
+  <li *ngFor="let country of countries">
+    <a [routerLink]="['/country', country.Slug]">{{ country.Country }}</a>
+  </li>
+</ul>

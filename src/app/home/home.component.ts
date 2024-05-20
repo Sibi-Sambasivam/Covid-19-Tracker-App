@@ -1,12 +1,26 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { CovidDataService } from '../covid-data.service';
 
 @Component({
   selector: 'app-home',
-  standalone: true,
-  imports: [],
   templateUrl: './home.component.html',
-  styleUrl: './home.component.css'
+  styleUrls: ['./home.component.css']
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit {
 
+  countries: any[] = [];
+
+  constructor(private covidDataService: CovidDataService) { }
+
+  ngOnInit(): void {
+    this.covidDataService.getAllCountries().subscribe(
+      data => {
+        this.countries = data;
+        console.log(this.countries);
+      },
+      error => {
+        console.error('Error fetching country data', error);
+      }
+    );
+  }
 }
